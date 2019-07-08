@@ -48,7 +48,7 @@ app.get('/monsters/:url', (req, res, next) => {
 })
 
 //save new monster
-app.post('/monsters/newmonster', (req, res, next) => {
+app.post('/monsters', (req, res, next) => {
  let newMonster = new Monster({
    name: req.body.name,
    size: req.body.size,
