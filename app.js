@@ -84,8 +84,10 @@ app.post('/monsters', (req, res, next) => {
    abilities: req.body.abilities
  })
  //save new monster to db
- newMonster.save((err, result) => {
-   if (err) { console.log(err) }
-   else { res.json(result) }
- })
+ // newMonster.save((err, result) => {
+ //   if (err) { console.log(err) }
+ //   else { res.json(result) }
+ // })
+
+ console.log('monster created: ', newMonster);
 })
