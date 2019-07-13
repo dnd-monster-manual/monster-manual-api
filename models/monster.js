@@ -67,5 +67,5 @@ let monsterSchema = mongoose.Schema({
     relationship: String
   }]
 }, { collection: 'monsters' })
-let Monster = mongoose.model('Monster', monsterSchema)
+let Monster = mongoose.model('Monster', monsterSchema, "monster")
 module.exports = Monster

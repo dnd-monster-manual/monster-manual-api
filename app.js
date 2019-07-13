@@ -11,7 +11,7 @@ app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname, 'public')))
-mongoose.connect('mongodb://127.0.0.1:27017/monster_manual', { useNewUrlParser: true})
+mongoose.connect('mongodb://localhost:27017/monster_manual', { useNewUrlParser: true})
 
 app.listen(5000, () => {
  console.log('Server listening on port 5000')
