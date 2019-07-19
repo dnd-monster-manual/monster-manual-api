@@ -5,6 +5,7 @@ let monsterSchema = mongoose.Schema({
   size: String,
   monster_type: String,
   tags: [String],
+  is_legendary: Boolean,
   alignment: String,
   ac: Number,
   ac_note: String,
