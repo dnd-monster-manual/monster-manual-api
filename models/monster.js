@@ -63,7 +63,7 @@ let monsterSchema = mongoose.Schema({
     source: String
   }],
   monster_relationships: [{
-    monster_id: String,
+    monster_name: String,
     relationship: String
   }]
 }, { collection: 'monsters' })
