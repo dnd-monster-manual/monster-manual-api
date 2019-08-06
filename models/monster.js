@@ -1,5 +1,6 @@
 let mongoose = require('mongoose')
 let monsterSchema = mongoose.Schema({
+  _id: false,
   name: String,
   url: String,
   size: String,
@@ -12,12 +13,14 @@ let monsterSchema = mongoose.Schema({
   hp: Number,
   hd: String,
   speeds: [{
+    _id: false,
     speed_type: String,
     speed: Number
   }],
   ability_scores: [Number],
   saving_throws: [Number],
   skills: [{
+    _id: false,
     skill: String,
     bonus: Number
   }],
@@ -26,6 +29,7 @@ let monsterSchema = mongoose.Schema({
   vulnerabilities: [String],
   condition_immunities: [String],
   senses: [{
+    _id: false,
     sense: String,
     distance: Number
   }],
@@ -33,6 +37,7 @@ let monsterSchema = mongoose.Schema({
   cr: Number,
   xp: Number,
   attacks: [{
+    _id: false,
     weapon: String,
     attack_type: String,
     to_hit: Number,
@@ -45,6 +50,7 @@ let monsterSchema = mongoose.Schema({
     effect: String
   }],
   abilities: [{
+    _id: false,
     name: String,
     ability_type: String,
     effect: String
@@ -60,13 +66,21 @@ let monsterSchema = mongoose.Schema({
   habitat_society: String,
   ecology: String,
   item_components: [{
+    _id: false,
     item: String,
     source: String
   }],
   monster_relationships: [{
+    _id: false,
     monster_name: String,
     relationship: String
-  }]
+  }],
+  has_lair: Boolean,
+  lair_description: String,
+  lair_action_rules: String,
+  lair_actions: [String],
+  lair_effect_rules: String,
+  lair_effects: [String]
 }, { collection: 'monsters' })
 let Monster = mongoose.model('Monster', monsterSchema)
 module.exports = Monster
