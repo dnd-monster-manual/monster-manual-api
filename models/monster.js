@@ -56,6 +56,7 @@ let monsterSchema = mongoose.Schema({
     effect: String
   }],
   legendary_actions: Number,
+  lore: String,
   climate: [String],
   terrain: [String],
   rarity: String,

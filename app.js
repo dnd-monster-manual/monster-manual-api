@@ -11,7 +11,7 @@ app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname, 'public')))
-mongoose.connect('mongodb://localhost:27017/monster_manual', { useNewUrlParser: true})
+mongoose.connect('mongodb://localhost:27017/monster_manual', { useNewUrlParser: true, useFindAndModify: false })
 
 app.listen(5000, () => {
  console.log('Server listening on port 5000')
@@ -112,7 +112,8 @@ function monsterFromRequest(req) {
     lair_action_rules: req.body.lair_action_rules,
     lair_actions: req.body.lair_actions,
     lair_effect_rules: req.body.lair_effect_rules,
-    lair_effects: req.body.lair_effects
+    lair_effects: req.body.lair_effects,
+    lore: req.body.lore
   })
   return monster
 }
